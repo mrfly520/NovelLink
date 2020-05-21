@@ -1,6 +1,7 @@
 .DS_Store
 /dist
 
+
 # local env files
 .env.local
 .env.*.local
@@ -19,3 +20,4 @@ yarn-error.log*
 *.sln
 *.sw?
 
+/front_nl/node_modules/
