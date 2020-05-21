@@ -1,5 +1,4 @@
 .DS_Store
-/front_nl/node_modules/
 /dist
 
 # local env files
