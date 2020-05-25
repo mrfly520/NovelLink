@@ -1,25 +1,24 @@
 package main
 
 import (
-	"github.com/gin-contrib/cors"
+	"NovelLink/middleware"
+	"fmt"
 	"github.com/gin-gonic/gin"
-	"time"
 )
 
 func serve() {
+	a := [...]int{1, 2, 3, 4}
+	s1 := a[:]
+	s1[0] = 5
+	m := make(map[int]string, 10)
+	m[1] = "dsdf"
+	m[0] = string(nil)
+	println(int(nil))
+	println(string(nil))
+
+	fmt.Println(s1)
 	r := gin.Default()
-	r.Use(cors.New(cors.Config{
-		AllowOrigins:     []string{"http://127.0.0.1"},
-		AllowMethods:     []string{"PUT", "PATCH", "GET"},
-		AllowHeaders:     []string{"Origin"},
-		ExposeHeaders:    []string{"Content-Length"},
-		AllowCredentials: true,
-		AllowOriginFunc: func(origin string) bool {
-			print(origin)
-			return true
-		},
-		MaxAge: 12 * time.Hour,
-	}))
+	r.Use(middleware.Cors())
 	r.GET("/ping", func(c *gin.Context) {
 		c.JSON(200, gin.H{
 			"message": "pong",

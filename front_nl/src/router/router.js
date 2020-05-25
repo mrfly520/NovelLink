@@ -4,7 +4,8 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 /*配置路由*/
 const routes=[
-    {name:'demo',path:"/demo",component:()=>import("../components/demo")}
+    {name:'demo',path:"/demo",component:()=>import("../components/demo")},
+    {name:'home',path:"/home",component:()=>import("../pages/home")}
 ]
 /*实例化路由*/
 const router = new VueRouter({
